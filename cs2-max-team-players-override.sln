@@ -1,6 +1,6 @@
 ﻿
 Microsoft Visual Studio Solution File, Format Version 12.00
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxTeamPlayersOverridePlugin", "MaxTeamPlayersOverridePlugin.csproj", "{1DA5A1A0-3AA7-42AC-9BDC-4DB15531869D}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "MaxTeamPlayersOverride", "src\MaxTeamPlayersOverride.csproj", "{1DA5A1A0-3AA7-42AC-9BDC-4DB15531869D}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution

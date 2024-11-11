@@ -2,7 +2,7 @@
 using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 
-namespace MaxTeamPlayersOverridePlugin;
+namespace MaxTeamPlayersOverride;
 
 public class PluginConfig : BasePluginConfig
 {
@@ -13,10 +13,9 @@ public class PluginConfig : BasePluginConfig
     public int MaxCTs { get; set; } = -1;
 }
 
-public class MaxTeamPlayersOverridePlugin : BasePlugin, IPluginConfig<PluginConfig>
+public partial class MaxTeamPlayersOverride : BasePlugin, IPluginConfig<PluginConfig>
 {
     public override string ModuleName => "Max Team Players Override Plugin";
-    public override string ModuleVersion => "1.0.0";
 
     public PluginConfig Config { get; set; }
     
