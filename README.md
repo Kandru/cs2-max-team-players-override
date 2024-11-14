@@ -1,4 +1,4 @@
-# CounterstrikeSharp - Cosmetics
+# CounterstrikeSharp - Max PLayers per Team Override
 
 [![UpdateManager Compatible](https://img.shields.io/badge/CS2-UpdateManager-darkgreen)](https://github.com/Kandru/cs2-update-manager/)
 [![GitHub release](https://img.shields.io/github/release/Kandru/cs2-max-team-players-override?include_prereleases=&sort=semver&color=blue)](https://github.com/Kandru/cs2-max-team-players-override/releases/)
