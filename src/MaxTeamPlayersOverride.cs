@@ -1,70 +1,53 @@
-﻿using System.Text.Json.Serialization;
-using CounterStrikeSharp.API;
+﻿using CounterStrikeSharp.API;
 using CounterStrikeSharp.API.Core;
 
-namespace MaxTeamPlayersOverride;
-
-public class PluginConfig : BasePluginConfig
+namespace MaxTeamPlayersOverride
 {
-    [JsonPropertyName("max_ts")]
-    public int MaxTs { get; set; } = -1;
-    
-    [JsonPropertyName("max_cts")]
-    public int MaxCTs { get; set; } = -1;
-}
-
-public partial class MaxTeamPlayersOverride : BasePlugin, IPluginConfig<PluginConfig>
-{
-    public override string ModuleName => "Max Team Players Override Plugin";
-
-    public PluginConfig Config { get; set; }
-    
-    public void OnConfigParsed(PluginConfig? config)
+    public partial class MaxTeamPlayersOverride : BasePlugin
     {
-        if (config == null) return;
-        Config = config;
-    }
-    
-    public override void Load(bool hotReload)
-    {
-        RegisterEventHandler<EventRoundStart>((_, _) =>
+        public override string ModuleName => "Max Team Players Override Plugin";
+
+        public override void Load(bool hotReload)
         {
-            var maxTs = Config.MaxTs;
-            var maxCTs = Config.MaxCTs;
+            RegisterEventHandler<EventRoundStart>((_, _) =>
+            {
+                int maxTs = Config.MaxTs;
+                int maxCTs = Config.MaxCTs;
 
-            if (maxTs < 0)
-            {
-                maxTs = Server.MaxPlayers / 2;
-            }
-            if (maxCTs < 0)
-            {
-                maxCTs = Server.MaxPlayers / 2;
-            }
-            
-            SetMaxTs(maxTs);
-            SetMaxCTs(maxCTs);
-            
-            return HookResult.Continue;
-        });
-    }
-    
-    private void SetMaxTs(int num)
-    {
-        var ents = Utilities.FindAllEntitiesByDesignerName<CCSGameRulesProxy>("cs_gamerules");
-        foreach (var ent in ents)
-        {
-            ent.GameRules!.NumSpawnableTerrorist = num;
-            ent.GameRules.MaxNumTerrorists = num;
+                if (maxTs < 0)
+                {
+                    maxTs = Server.MaxPlayers / 2;
+                }
+                if (maxCTs < 0)
+                {
+                    maxCTs = Server.MaxPlayers / 2;
+                }
+
+                SetMaxTs(maxTs);
+                SetMaxCTs(maxCTs);
+
+                return HookResult.Continue;
+            });
         }
-    }
 
-    private void SetMaxCTs(int num)
-    {
-        var ents = Utilities.FindAllEntitiesByDesignerName<CCSGameRulesProxy>("cs_gamerules");
-        foreach (var ent in ents)
+        private static void SetMaxTs(int num)
         {
-            ent.GameRules!.NumSpawnableCT = num;
-            ent.GameRules.MaxNumCTs = num;
+            IEnumerable<CCSGameRulesProxy> ents = Utilities.FindAllEntitiesByDesignerName<CCSGameRulesProxy>("cs_gamerules");
+            foreach (CCSGameRulesProxy ent in ents)
+            {
+                ent.GameRules!.NumSpawnableTerrorist = num;
+                ent.GameRules.MaxNumTerrorists = num;
+            }
+        }
+
+        private static void SetMaxCTs(int num)
+        {
+            IEnumerable<CCSGameRulesProxy> ents = Utilities.FindAllEntitiesByDesignerName<CCSGameRulesProxy>("cs_gamerules");
+            foreach (CCSGameRulesProxy ent in ents)
+            {
+                ent.GameRules!.NumSpawnableCT = num;
+                ent.GameRules.MaxNumCTs = num;
+            }
         }
     }
 }
