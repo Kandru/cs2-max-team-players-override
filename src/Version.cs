@@ -1,6 +1,7 @@
-namespace MaxTeamPlayersOverride;
-
-public partial class MaxTeamPlayersOverride
+namespace MaxTeamPlayersOverride
 {
-    public override string ModuleVersion => "1.0.0";
+    public partial class MaxTeamPlayersOverride
+    {
+        public override string ModuleVersion => "1.0.1";
+    }
 }
