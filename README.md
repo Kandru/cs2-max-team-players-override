@@ -6,12 +6,12 @@
 [![issues - cs2-map-modifier](https://img.shields.io/github/issues/Kandru/cs2-max-team-players-override)](https://github.com/Kandru/cs2-max-team-players-override/issues)
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=C2AVYKGVP9TRG)
 
-This tool overrides the maximum players per team to allow more then 5vs5 on Competitive servers.
+This tool overrides the maximum players per team to allow more then 5vs5 on competitive servers.
 
 ## Installation
 
 1. Download and extract the latest release from the [GitHub releases page](https://github.com/Kandru/cs2-max-team-players-override/releases/).
-2. Move the "MaxTeamPlayersOverride" folder to the `/addons/counterstrikesharp/configs/plugins/` directory.
+2. Move the "MaxTeamPlayersOverride" folder to the `/addons/counterstrikesharp/plugins/` directory.
 3. Restart the server.
 
 Updating is even easier: simply overwrite all plugin files and they will be reloaded automatically. To automate updates please use our [CS2 Update Manager](https://github.com/Kandru/cs2-update-manager/).
