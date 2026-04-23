@@ -1,4 +1,4 @@
-# CounterstrikeSharp - Max PLayers per Team Override
+# CounterstrikeSharp - Max Players per Team Override
 
 [![UpdateManager Compatible](https://img.shields.io/badge/CS2-UpdateManager-darkgreen)](https://github.com/Kandru/cs2-update-manager/)
 [![GitHub release](https://img.shields.io/github/release/Kandru/cs2-max-team-players-override?include_prereleases=&sort=semver&color=blue)](https://github.com/Kandru/cs2-max-team-players-override/releases/)
@@ -6,7 +6,7 @@
 [![issues - cs2-map-modifier](https://img.shields.io/github/issues/Kandru/cs2-max-team-players-override)](https://github.com/Kandru/cs2-max-team-players-override/issues)
 [![](https://www.paypalobjects.com/en_US/i/btn/btn_donateCC_LG.gif)](https://www.paypal.com/donate/?hosted_button_id=C2AVYKGVP9TRG)
 
-This tool overrides the maximum players per team to allow more then 5vs5 on competitive servers.
+This tool overrides the maximum players per team to allow more then 5vs5 on competitive servers. Keep in mind that if you raise the limit that you still need enough spawn points per team or otherwise a player cannot join the team.
 
 ## Installation
 
